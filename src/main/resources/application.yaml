@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: payment-service
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:paymentdb
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+
+server:
+  port: 8081
+
+info:
+  app:
+    name: Payment Service Application
+    version: 1.0.0
+    description: DEMO JPA Spring Boot Application with Actuator
+
+
