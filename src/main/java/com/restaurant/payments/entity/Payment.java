@@ -3,6 +3,7 @@ package com.restaurant.payments.entity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class Payment {
     private Integer orderId;
 
     @NotNull
-    @PositiveOrZero(message = "amount must be positive or zero")
-    private double amount;
+    @Positive(message = "Amount must be positive ")
+    private Double amount;
 
     private String paymentStatus;
 
