@@ -1,8 +1,8 @@
-package com.foodapp.payment.service;
+package com.restaurant.payments.service;
 
-import com.foodapp.payment.dto.PaymentRequest;
-import com.foodapp.payment.entity.Payment;
-import com.foodapp.payment.repository.PaymentRepository;
+import com.restaurant.payments.dto.PaymentRequest;
+import com.restaurant.payments.entity.Payment;
+import com.restaurant.payments.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.foodapp.payment.repository;
+package com.restaurant.payments.repository;
 
-import com.foodapp.payment.entity.Payment;
+import com.restaurant.payments.entity.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

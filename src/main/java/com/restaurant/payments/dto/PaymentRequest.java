@@ -1,4 +1,4 @@
-package com.foodapp.payment.dto;
+package com.restaurant.payments.dto;
 
 import lombok.*;
 import org.springframework.stereotype.Service;
