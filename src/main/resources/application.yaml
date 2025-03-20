@@ -1,6 +1,7 @@
 spring:
   application:
     name: payment-service
+    logging: debug
 
   datasource:
     driver-class-name: org.h2.Driver
@@ -14,6 +15,12 @@ spring:
     console:
       enabled: true
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/spring-boot-realm
+
 
 server:
   port: 8081
@@ -24,4 +31,8 @@ info:
     version: 1.0.0
     description: DEMO JPA Spring Boot Application with Actuator
 
-
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG

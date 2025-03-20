@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,6 +30,7 @@ public class PaymentController {
 //        return paymentService.getPayment(orderId);
 //
 //    }
+@PreAuthorize("hasRole('CLIENT_S_ADMIN')")
 @Operation(summary = "Creates a new payment", description = "Creates a new payment with the provided details")
 @PostMapping({"/{orderId}"})
 @ApiResponses(value = {
