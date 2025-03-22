@@ -1,7 +1,7 @@
 # cp-payment-service
 
 # Starting the KeyCloak Locally 
-docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -v C:\\Users\\Prakash\\key:/opt/keycloak/data quay.io/keycloak/keycloak:23.0.4 start-dev
+docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -e KC_HOSTNAME=127.0.0.1 -v C:\\Users\\Prakash\\key:/opt/keycloak/data quay.io/keycloak/keycloak:23.0.4 start-dev
 
 # Website fro Keycloak Integeration
 https://medium.com/javarevisited/keycloak-integration-with-spring-security-6-37999f43ec85
