@@ -8,8 +8,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Entity
-@Table(name = "payments")
+@Entity(name = "payments")
 @Getter
 @Setter
 @ToString
@@ -25,8 +24,7 @@ public class Payment {
     @NotNull
     private Integer orderId;
 
-    @NotNull
-    @Positive(message = "Amount must be positive ")
+
     private Double amount;
 
     private String paymentStatus;

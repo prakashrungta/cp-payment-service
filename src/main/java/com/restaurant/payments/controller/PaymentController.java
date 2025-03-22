@@ -23,14 +23,8 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-//    @GetMapping({"/{orderId}"})
-//    public String getPayment(
-//            @PathVariable Integer orderId
-//    ) {
-//        return paymentService.getPayment(orderId);
-//
-//    }
-@PreAuthorize("hasRole('CLIENT_S_ADMIN')") // Has to be a resource_access role
+
+@PreAuthorize("hasRole('admin')")
 @Operation(summary = "Creates a new payment", description = "Creates a new payment with the provided details")
 @PostMapping({"/{orderId}"})
 @ApiResponses(value = {
