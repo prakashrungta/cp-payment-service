@@ -6,14 +6,14 @@ LABEL maintainer="prakash.rungta@gmail.com"
 WORKDIR /app
 
 # Copy Maven Wrapper & POM first to leverage caching
-COPY mvnw pom.xml ./
+COPY ./mvnw ./pom.xml ./
 COPY .mvn .mvn
 
 # Download dependencies separately to optimize caching
 RUN ./mvnw dependency:go-offline -B
 
 # Copy source code & build the application
-COPY src src
+COPY ./src src
 RUN ./mvnw clean package -DskipTests
 
 # ====== Stage 2: Minimal Runtime Image ======
