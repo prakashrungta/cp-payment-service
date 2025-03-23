@@ -31,10 +31,13 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/webjars/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                                .requestMatchers("/webjars/**", "/swagger-ui/**", "/v3/api-docs/**","/h2-console/**").permitAll()
                                 .anyRequest().authenticated()
                 )
-                .csrf(AbstractHttpConfigurer::disable)
+               // .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers.frameOptions().disable()) // Allow H2 console
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**")) // Disable CSRF for H2 console
+
                 .oauth2ResourceServer(oauth2ResourceServer ->
                         oauth2ResourceServer
                                 .jwt(jwt ->
