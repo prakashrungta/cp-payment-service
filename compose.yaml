@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  payment-service:
+    image: cp-payment-service
+    container_name: cp-payment-service-10
+    ports:
+      - "${SERVER_PORT}:8085"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - KEYCLOAK_URL=${KEYCLOAK_URL}
