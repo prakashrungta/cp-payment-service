@@ -35,3 +35,11 @@ logging:
     root: INFO
     org.springframework.security: DEBUG
     org.keycloak: DEBUG
+
+resilience4j:
+  ratelimiter:
+    instances:
+      paymentRateLimiter:
+        limitForPeriod: 1
+        limitRefreshPeriod: 30s
+        timeoutDuration: 0s
